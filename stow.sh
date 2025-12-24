@@ -21,5 +21,8 @@ if ! command -v stow >/dev/null 2>&1; then
     fi
 fi
 
-echo "Invoking stow for package 'nix'"
-stow -t ~ nix
+for p in nix home-manager
+do
+    echo "Invoking stow for package '$p'"
+    stow --adopt -t ~ $p
+done
