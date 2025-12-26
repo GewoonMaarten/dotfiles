@@ -26,3 +26,8 @@ do
     echo "Invoking stow for package '$p'"
     stow --adopt -t ~ $p
 done
+
+if [ "${XDG_SESSION_TYPE:-}" = "wayland" ]; then
+    echo "Wayland detected. Installing gdk config"
+    stow --adopt -t ~ "environment.d"
+fi
