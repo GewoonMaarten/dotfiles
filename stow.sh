@@ -21,13 +21,10 @@ if ! command -v stow >/dev/null 2>&1; then
     fi
 fi
 
-for p in nix home-manager
-do
-    echo "Invoking stow for package '$p'"
-    stow --adopt -t ~ $p
-done
+echo "Invoking stow for package 'dotfiles'"
+stow --adopt -t ~ "dotfiles"
 
 if [ "${XDG_SESSION_TYPE:-}" = "wayland" ]; then
     echo "Wayland detected. Installing gdk config"
-    stow --adopt -t ~ "environment.d"
+    stow --adopt -t ~ "wayland"
 fi
