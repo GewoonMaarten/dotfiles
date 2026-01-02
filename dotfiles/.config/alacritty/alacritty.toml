@@ -1,0 +1,7 @@
+[general]
+import = [
+  "~/.config/alacritty/oxocarbon.toml"
+]
+
+[font]
+normal = { family = "JetBrainsMono NFM", style = "Medium" }
